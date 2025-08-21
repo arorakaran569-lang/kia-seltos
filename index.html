@@ -46,6 +46,17 @@
     .button.emergency:hover {
       background-color: #a71d2a;
     }
+    .emergency-options {
+      display: none;
+      margin-top: 10px;
+    }
+    .emergency-options a {
+      margin-top: 10px;
+      background-color: #dc3545;
+    }
+    .emergency-options a:hover {
+      background-color: #a71d2a;
+    }
   </style>
 </head>
 <body>
@@ -58,7 +69,22 @@
   </div>
 
   <a class="button" href="tel:9416019830">📞 Call the Owner</a>
-  <a class="button emergency" href="tel:9138400890">🚨 Call for Emergency</a>
+
+  <!-- Emergency button to toggle the sub-options -->
+  <button class="button emergency" onclick="toggleEmergencyContacts()">🚨 Call for Emergency</button>
+
+  <!-- Emergency sub-options -->
+  <div id="emergencyContacts" class="emergency-options">
+    <a class="button emergency" href="tel:9138400890">📞 Emergency Contact 1: 9138400890</a>
+    <a class="button emergency" href="tel:7206900890">📞 Emergency Contact 2: 7206900890</a>
+  </div>
+
+  <script>
+    function toggleEmergencyContacts() {
+      const contacts = document.getElementById('emergencyContacts');
+      contacts.style.display = contacts.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 
 </body>
 </html>
